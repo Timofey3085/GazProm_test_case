@@ -9,6 +9,7 @@ m = [{11, 3, 5}, {2, 17, 87, 32}, {4, 44}, {24, 11, 9, 7, 8}]
 4 собрать все множества в один кортеж
 *написать решения в одну строку
 """
+import unittest
 from itertools import chain
 
 import pytest
@@ -52,9 +53,14 @@ def test_average_value():
     assert average_value([{11, 3, 5}, {2, 17, 87, 32}, {4, 44}, {24, 11, 9, 7, 8}]) == 18.857142857142858
 
 
-def test_collect_to_tuple():
-    """Pytest"""
-    assert collect_to_tuple([{11, 3, 5}, {2, 17, 87, 32}, {4, 44}, {24, 11, 9, 7, 8}]) == (11, 3, 5, 32, 17, 2, 87, 4, 44, 7, 8, 9, 11, 24)
+class TestCollectToTuple(unittest.TestCase):
+
+    def test_collect_to_tuple(self):
+        """Unittest"""
+        self.assertEqual(collect_to_tuple(
+            [{11, 3, 5}, {2, 17, 87, 32}, {4, 44}, {24, 11, 9, 7, 8}]),
+            (11, 3, 5, 32, 17, 2, 87, 4, 44, 7, 8, 9, 11, 24)
+        )
 
 
 if __name__ == '__main__':
@@ -63,3 +69,4 @@ if __name__ == '__main__':
     print(average_value(m))
     print(collect_to_tuple(m))
     pytest.main()
+    unittest.main()
