@@ -37,22 +37,27 @@ duplicates = df[df.duplicated(subset='id', keep=False)]
 
 
 def test_unique_lastname():
+    """Pytest"""
     assert 'Фамилия1' in unique_lastname
 
 
 def test_unique_name():
+    """Pytest"""
     assert 'Имя1' in unique_name
 
 
 def test_unique_patronymic():
+    """Pytest"""
     assert 'Отчество1' in unique_patronymic
 
 
 def test_unique_date_of_birth():
+    """Pytest"""
     assert '21.11.1998' in unique_date_of_birth
 
 
 def test_unique_id():
+    """Pytest"""
     assert '312040348-3048' in unique_id
 
 
