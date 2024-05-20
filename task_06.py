@@ -28,18 +28,25 @@ from pprint import pprint
 
 import requests
 
+json_data = requests.get('https://swapi.dev/api/people/').json()
 
-json_data = requests.get('https://starwars-databank-server.vercel.app/api/v1/characters').json()
-character_names = [character['name'] for character in json_data['data']]
+results = json_data['results']
 
-with open('character_names.txt', 'w') as outfile:
-    for name in character_names:
+t = []  # Список для хранения характеристик персонажей
+
+for character in results:
+    table = f"{character['name']:20} | {character['birth_year']:10} | {character['eye_color']}"
+    t.append(table)
+
+with open('character_specifications.txt', 'w') as outfile:
+    for name in t:
         outfile.write(name + '\n')
 
-    print("Данные успешно сохранены в файл 'character_names.txt'")
+    print("Данные успешно сохранены в файл 'character_specifications.txt'")
 
-pprint(character_names)
-pprint(json_data)
+# pprint(results)
+pprint(t)
 
 # не разобрался с заданиеv, с pydantic знаком поверхостно, поэтому привел пример кода,
-# где извлёк все имена персонажей из другого api и сохранил их в файл character_names.txt
+# где извлёк все имена персонажей их день рождения и цвет глаз из другого api
+# и сохранил их в файл character_specifications.txt

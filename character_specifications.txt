@@ -1,0 +1,10 @@
+Luke Skywalker       | 19BBY      | blue
+C-3PO                | 112BBY     | yellow
+R2-D2                | 33BBY      | red
+Darth Vader          | 41.9BBY    | yellow
+Leia Organa          | 19BBY      | brown
+Owen Lars            | 52BBY      | blue
+Beru Whitesun lars   | 47BBY      | blue
+R5-D4                | unknown    | red
+Biggs Darklighter    | 24BBY      | brown
+Obi-Wan Kenobi       | 57BBY      | blue-gray
