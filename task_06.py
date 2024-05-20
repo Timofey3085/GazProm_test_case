@@ -35,7 +35,7 @@ results = json_data['results']
 specifications = []  # Список для хранения характеристик персонажей
 
 for character in results:
-    table = f"{character['name']:20} | {character['birth_year']:10} | {character['eye_color']}"
+    table = f"{character['name']:18} | {character['birth_year']:7} | {character['eye_color']}"
     specifications.append(table)
 
 with open('character_specifications.txt', 'w') as outfile:
