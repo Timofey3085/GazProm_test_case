@@ -16,22 +16,22 @@ from itertools import chain
 import pytest
 
 
-def total_amount(m):
+def total_amount(m) -> int:
     """Общее количество чисел"""
     return sum(len(i) for i in m)
 
 
-def total_sum(m):
+def total_sum(m) -> int:
     """Общая сумма чисел"""
     return sum(sum(i) for i in m)
 
 
-def average_value(m):
+def average_value(m) -> float:
     """Среднее значение"""
     return sum(map(sum, m)) / sum(map(len, m))
 
 
-def collect_to_tuple(m):
+def collect_to_tuple(m) -> tuple:
     """Все множества в одином кортеже"""
     return tuple(chain.from_iterable(m))
 

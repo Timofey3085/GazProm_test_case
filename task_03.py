@@ -10,7 +10,7 @@ b = [{'k1': 1, 'k2': 2, 'k3': 3}, {'k1': 4, 'k2': 5, 'k3': 6}]
 import pytest
 
 
-def list_of_dictionaries(a):
+def list_of_dictionaries(a) -> str:
     """Список словарей"""
     key_list = ['k1', 'k2', 'k3']
     return f'b = {[{key_list[0]: i[0], key_list[1]: i[1], key_list[2]: i[2]} for i in a]}'
