@@ -32,20 +32,20 @@ json_data = requests.get('https://swapi.dev/api/people/').json()
 
 results = json_data['results']
 
-t = []  # Список для хранения характеристик персонажей
+specifications = []  # Список для хранения характеристик персонажей
 
 for character in results:
     table = f"{character['name']:20} | {character['birth_year']:10} | {character['eye_color']}"
-    t.append(table)
+    specifications.append(table)
 
 with open('character_specifications.txt', 'w') as outfile:
-    for name in t:
+    for name in specifications:
         outfile.write(name + '\n')
 
     print("Данные успешно сохранены в файл 'character_specifications.txt'")
 
 # pprint(results)
-pprint(t)
+pprint(specifications)
 
 # не разобрался с заданиеv, с pydantic знаком поверхостно, поэтому привел пример кода,
 # где извлёк все имена персонажей их день рождения и цвет глаз из другого api
